@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Name Generator 🎸</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🎶 Band Name Generator 🎶</h1>
+    <form method="POST" autocomplete="off">  <!-- Formda autocomplete="off" -->
+        <label>Enter the name of the city you grew up in?:</label><br>
+        <input type="text" name="city" required autocomplete="off"><br><br>  <!-- City input'a autocomplete="off" -->
+        <label>Enter your pet's name:</label><br>
+        <input type="text" name="pet" required autocomplete="off"><br><br>  <!-- Pet input'a autocomplete="off" -->
+        <button type="submit">Generate Band Name</button>
+        <a href="/?clear=true"><button type="button">Clear</button></a>
+    </form>
+
+    {% if band_name %}
+        <h2>Your band name could be: <strong>{{ band_name +"😎" }}</strong></h2>
+    {% endif %}
+</body>
+</html>
