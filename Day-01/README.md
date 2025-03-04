@@ -1,4 +1,4 @@
-# 📅 Day 01: Working with Variables in Python  
+# 📅 Day-01: Working with Variables in Python  
 
 ## 📌 Topics Covered- What I Learned?
 - Variables and Data Types  
