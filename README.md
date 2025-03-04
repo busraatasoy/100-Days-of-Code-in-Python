@@ -14,8 +14,8 @@
       
 👩‍🎓 **Beginner**
 ----------------------------------------------------------------
-- ✅ | [**Day 01**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/tree/main/Day%2001%3A) Working with Variables in Python to Manage Data
-- ✅ | **Day 02**: Understanding Data Types and How to Manipulate Strings 
+- ✅ | [**Day-01**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-01/README.md) Working with Variables in Python to Manage Data
+- ✅ | [**Day-02**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-02/README.md) Understanding Data Types and How to Manipulate Strings 
 - ✅ | **Day 03**: Control Flow and Logical Operators 
 - ✅ | **Day 04**: Randomisation and Python Lists 
 - ⏳ | **Day 05**: Python Loops 
