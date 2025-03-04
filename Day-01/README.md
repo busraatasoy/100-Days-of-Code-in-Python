@@ -18,7 +18,7 @@ This project generates a band name based on user input.
 
 ## ✌❗ Daily Task:
 
-### Day 01 - Band Name Generator 🎸
+### Day-01 - Band Name Generator 🎸
 You can create a fun group name by entering your name and the city you live in.
 
 🔗 [You Can Click to Try](https://busraatasoy.github.io/100-Days-of-Code-in-Python/)
