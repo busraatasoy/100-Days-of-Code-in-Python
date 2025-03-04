@@ -24,7 +24,7 @@
 
     <script>
         document.getElementById("bandForm").addEventListener("submit", function(event) {
-            event.preventDefault();  // Sayfanın yeniden yüklenmesini engeller
+            event.preventDefault();  // Prevents the page from reloading.
             
             let city = document.getElementById("city").value.trim();
             let pet = document.getElementById("pet").value.trim();
@@ -37,7 +37,7 @@
             }
         });
 
-        // Clear button'a tıklanınca input'ları temizle
+        // Clear the inputs when you click the Clear button.
         document.getElementById("clear").addEventListener("click", function() {
             document.getElementById("city").value = "";
             document.getElementById("pet").value = "";
