@@ -11,17 +11,38 @@
 </head>
 <body>
     <h1>🎶 Band Name Generator 🎶</h1>
-    <form method="POST" autocomplete="off">  <!-- Formda autocomplete="off" -->
+    <form id="bandForm" autocomplete="off">
         <label>Enter the name of the city you grew up in?:</label><br>
-        <input type="text" name="city" required autocomplete="off"><br><br>  <!-- City input'a autocomplete="off" -->
+        <input type="text" id="city" required autocomplete="off"><br><br>
         <label>Enter your pet's name:</label><br>
-        <input type="text" name="pet" required autocomplete="off"><br><br>  <!-- Pet input'a autocomplete="off" -->
+        <input type="text" id="pet" required autocomplete="off"><br><br>
         <button type="submit">Generate Band Name</button>
-        <a href="/?clear=true"><button type="button">Clear</button></a>
+        <button type="button" id="clear">Clear</button>
     </form>
 
-    {% if band_name %}
-        <h2>Your band name could be: <strong>{{ band_name +"😎" }}</strong></h2>
-    {% endif %}
+    <h2 id="result">Your band name could be: </h2>
+
+    <script>
+        document.getElementById("bandForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Sayfanın yeniden yüklenmesini engeller
+            
+            let city = document.getElementById("city").value.trim();
+            let pet = document.getElementById("pet").value.trim();
+            
+            if (city && pet) {
+                let bandName = `${city} ${pet} 😎`;
+                document.getElementById("result").innerText = `Your band name could be: ${bandName}`;
+            } else {
+                alert("Please enter both fields!");
+            }
+        });
+
+        // Clear button'a tıklanınca input'ları temizle
+        document.getElementById("clear").addEventListener("click", function() {
+            document.getElementById("city").value = "";
+            document.getElementById("pet").value = "";
+            document.getElementById("result").innerText = "Your band name could be:";
+        });
+    </script>
 </body>
 </html>
