@@ -30,15 +30,20 @@
     <div class="container">
         <h2>Tip Calculator</h2>
         <label>Bill Amount ($):</label>
-        <input type="number" id="bill" placeholder="Enter bill amount: "$" ">
+        <input type="number" id="bill" placeholder="Enter bill amount" onkeydown="focusNext(event, 'tip')">
         
         <label>Tip Percentage (%):</label>
-        <input type="number" id="tip" placeholder="Enter tip percentage (10,12,15) "$"">
+        <input type="number" id="tip" list="tip-values" placeholder="Enter tip percentage" onkeydown="focusNext(event, 'people')">
+        <datalist id="tip-values">
+            <option value="10">
+            <option value="12">
+            <option value="15">
+        </datalist>
         
         <label>Number of People:</label>
-        <input type="number" id="people" placeholder="Enter number of people:">
+        <input type="number" id="people" placeholder="Enter number of people" onkeydown="focusNext(event, 'calculate-btn')">
         
-        <button onclick="calculateTip()">Calculate</button>
+        <button id="calculate-btn" onclick="calculateTip()">Calculate</button>
         <button onclick="resetFields()">Reset</button>
         
         <h3 id="result"></h3>
@@ -67,6 +72,13 @@
             document.getElementById("tip").value = "";
             document.getElementById("people").value = "";
             document.getElementById("result").innerText = "";
+        }
+
+        function focusNext(event, nextElementId) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById(nextElementId).focus();
+            }
         }
     </script>
 </body>
