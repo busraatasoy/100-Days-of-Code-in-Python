@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tip Calculator</h2>
+        <label>Bill Amount ($):</label>
+        <input type="number" id="bill" placeholder="Enter bill amount">
+        
+        <label>Tip Percentage (%):</label>
+        <input type="number" id="tip" placeholder="Enter tip percentage">
+        
+        <label>Number of People:</label>
+        <input type="number" id="people" placeholder="Enter number of people">
+        
+        <button onclick="calculateTip()">Calculate</button>
+        <button onclick="resetFields()">Reset</button>
+        
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculateTip() {
+            let bill = parseFloat(document.getElementById("bill").value);
+            let tip = parseFloat(document.getElementById("tip").value);
+            let people = parseInt(document.getElementById("people").value);
+            
+            if (isNaN(bill) || isNaN(tip) || isNaN(people) || people <= 0) {
+                document.getElementById("result").innerText = "Please enter valid values.";
+                return;
+            }
+            
+            let tipAmount = (bill * (tip / 100));
+            let totalBill = bill + tipAmount;
+            let amountPerPerson = totalBill / people;
+            
+            document.getElementById("result").innerText = `Each person should pay: $${amountPerPerson.toFixed(2)}`;
+        }
+        
+        function resetFields() {
+            document.getElementById("bill").value = "";
+            document.getElementById("tip").value = "";
+            document.getElementById("people").value = "";
+            document.getElementById("result").innerText = "";
+        }
+    </script>
+</body>
+</html>
