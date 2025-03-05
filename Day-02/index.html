@@ -30,10 +30,10 @@
     <div class="container">
         <h2>Tip Calculator</h2>
         <label>Bill Amount ($):</label>
-        <input type="number" id="bill" placeholder="Enter bill amount" onkeydown="focusNext(event, 'tip')">
+        <input type="number" id="bill" placeholder="Enter bill amount" onkeypress="focusNext(event, 'tip')">
         
         <label>Tip Percentage (%):</label>
-        <input type="number" id="tip" list="tip-values" placeholder="Enter tip percentage" onkeydown="focusNext(event, 'people')">
+        <input type="number" id="tip" list="tip-values" placeholder="Enter tip percentage" onkeypress="focusNext(event, 'people')">
         <datalist id="tip-values">
             <option value="10">
             <option value="12">
@@ -41,10 +41,10 @@
         </datalist>
         
         <label>Number of People:</label>
-        <input type="number" id="people" placeholder="Enter number of people" onkeydown="focusNext(event, 'calculate-btn')">
+        <input type="number" id="people" placeholder="Enter number of people" onkeypress="focusNext(event, 'calculate-btn')">
         
-        <button id="calculate-btn" onclick="calculateTip()">Calculate</button>
-        <button onclick="resetFields()">Reset</button>
+        <button id="calculate-btn" onclick="calculateTip()" onkeypress="focusNext(event, 'reset-btn')">Calculate</button>
+        <button id="reset-btn" onclick="resetFields()">Reset</button>
         
         <h3 id="result"></h3>
     </div>
@@ -76,7 +76,6 @@
 
         function focusNext(event, nextElementId) {
             if (event.key === "Enter") {
-                event.preventDefault();
                 document.getElementById(nextElementId).focus();
             }
         }
