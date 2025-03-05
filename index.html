@@ -3,37 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100-Days-of-Code-in-Python</title>
+    <title>Tip Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 50px;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
         }
-        li {
+        input, button {
+            width: 100%;
             margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
-            color: blue;
-            font-size: 18px;
-        }
-        a:hover {
-            color: red;
+            padding: 10px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <h1>100-Days-of-Code-in-Python- Web Projects</h1>
-    <p>You can access the projects by day here.</p>
-    
-    <ul>
-        <li><a href="Day-01/index.html">Day-01 Band Name Generator</a></li>
-        <li><a href="Day-02/index.html">Day-02 Tip Calculator </a></li>
+    <div class="container">
+        <h2>Tip Calculator</h2>
+        <label>Bill Amount ($):</label>
+        <input type="number" id="bill" placeholder="Enter bill amount" onkeydown="focusNext(event, 'tip')">
+        
+        <label>Tip Percentage (%):</label>
+        <input type="number" id="tip" list="tip-values" placeholder="Enter tip percentage" onkeydown="focusNext(event, 'people')">
+        <datalist id="tip-values">
+            <option value="10">
+            <option value="12">
+            <option value="15">
+        </datalist>
+        
+        <label>Number of People:</label>
+        <input type="number" id="people" placeholder="Enter number of people" onkeydown="focusNext(event, 'calculate-btn')">
+        
+        <button id="calculate-btn" onclick="calculateTip()" onkeydown="focusNext(event, 'reset-btn')">Calculate</button>
+        <button id="reset-btn" onclick="resetFields()">Reset</button>
+        
+        <h3 id="result"></h3>
+    </div>
 
-    </ul>
+    <script>
+        function calculateTip() {
+            let bill = parseFloat(document.getElementById("bill").value);
+            let tip = parseFloat(document.getElementById("tip").value);
+            let people = parseInt(document.getElementById("people").value);
+            
+            if (isNaN(bill) || isNaN(tip) || isNaN(people) || people <= 0) {
+                document.getElementById("result").innerText = "Please enter valid values.";
+                return;
+            }
+            
+            let tipAmount = (bill * (tip / 100));
+            let totalBill = bill + tipAmount;
+            let amountPerPerson = totalBill / people;
+            
+            document.getElementById("result").innerText = `Each person should pay: $${amountPerPerson.toFixed(2)}`;
+        }
+        
+        function resetFields() {
+            document.getElementById("bill").value = "";
+            document.getElementById("tip").value = "";
+            document.getElementById("people").value = "";
+            document.getElementById("result").innerText = "";
+        }
+
+        function focusNext(event, nextElementId) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById(nextElementId).focus();
+            }
+        }
+    </script>
 </body>
 </html>
