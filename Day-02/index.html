@@ -30,10 +30,10 @@
     <div class="container">
         <h2>Tip Calculator</h2>
         <label>Bill Amount ($):</label>
-        <input type="number" id="bill" placeholder="Enter bill amount" onkeypress="focusNext(event, 'tip')">
+        <input type="number" id="bill" placeholder="Enter bill amount" onkeyup="focusNext(event, 'tip')" tabindex="1">
         
         <label>Tip Percentage (%):</label>
-        <input type="number" id="tip" list="tip-values" placeholder="Enter tip percentage" onkeypress="focusNext(event, 'people')">
+        <input type="number" id="tip" list="tip-values" placeholder="Enter tip percentage" onkeyup="focusNext(event, 'people')" tabindex="2">
         <datalist id="tip-values">
             <option value="10">
             <option value="12">
@@ -41,10 +41,10 @@
         </datalist>
         
         <label>Number of People:</label>
-        <input type="number" id="people" placeholder="Enter number of people" onkeypress="focusNext(event, 'calculate-btn')">
+        <input type="number" id="people" placeholder="Enter number of people" onkeyup="focusNext(event, 'calculate-btn')" tabindex="3">
         
-        <button id="calculate-btn" onclick="calculateTip()" onkeypress="focusNext(event, 'reset-btn')">Calculate</button>
-        <button id="reset-btn" onclick="resetFields()">Reset</button>
+        <button id="calculate-btn" onclick="calculateTip()" onkeyup="focusNext(event, 'reset-btn')" tabindex="4">Calculate</button>
+        <button id="reset-btn" onclick="resetFields()" tabindex="5">Reset</button>
         
         <h3 id="result"></h3>
     </div>
@@ -76,7 +76,10 @@
 
         function focusNext(event, nextElementId) {
             if (event.key === "Enter") {
-                document.getElementById(nextElementId).focus();
+                event.preventDefault(); // Tarayıcının varsayılan davranışını engelle
+                setTimeout(() => {
+                    document.getElementById(nextElementId).focus();
+                }, 50); // Odaklanma sorunu yaşanmaması için bekletme
             }
         }
     </script>
