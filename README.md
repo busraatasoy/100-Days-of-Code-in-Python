@@ -9,7 +9,12 @@
 ## **Progress Status:**
 - ✅ = **Completed**  
 - ⏳ = **In Progress**  
-- ❌ = **Not Started Yet**  
+- ❌ = **Not Started Yet**
+  
+
+## **Daily Project Tasks Websites**
+🔗👉[You can click on the link to try it.](https://busraatasoy.github.io/100-Days-of-Code-in-Python/)
+
 
       
 👩‍🎓 **Beginner**
