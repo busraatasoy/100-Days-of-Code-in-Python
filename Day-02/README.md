@@ -25,8 +25,6 @@ You can calculate a tip by entering your choose.
 
 [You Can Click to Try](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-02/index.html)
 
-
-
 If you want to return to the home page:
 
 🔗👉 [Back to Main Page](https://github.com/busraatasoy/100-Days-of-Code-in-Python)
