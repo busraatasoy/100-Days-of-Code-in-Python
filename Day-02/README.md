@@ -13,9 +13,9 @@
 
 This project calculates a tip based on user input.  
 
-✅ **Run the script**: [Tip Calculator]
+✅ **Run the script**: [Tip Calculator](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-02/Tip_Calculator.py)
 
-✅ **See the console output**: [Output for Code]
+✅ **See the console output**: [Output for Code](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-02/Tip%20Calculator.gif)
 
 
 ## ✌❗ Daily Task:
@@ -23,7 +23,7 @@ This project calculates a tip based on user input.
 ### Day-02 - Tip Calculator Project 💰
 You can calculate a tip by entering your choose.
 
-[You Can Click to Try]
+[You Can Click to Try](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-02/index.html)
 
 
 
