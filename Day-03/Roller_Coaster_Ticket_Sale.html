@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roller Coaster Ticket Sale 🎢</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎢 Roller Coaster Ticket Sale</h2>
+        
+        <label>Enter your height (cm): 📏</label>
+        <input type="number" id="height" placeholder="Your height in cm">
+
+        <label>Enter your age: 🎂</label>
+        <input type="number" id="age" placeholder="Your age">
+
+        <label>Do you want a photo? (y/n) 🖼️</label>
+        <input type="text" id="photo" placeholder="y or n">
+
+        <button onclick="calculateBill()">Calculate Ticket Price 💵</button>
+        <button onclick="resetSelections()">Reset Selections 🔄</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function calculateBill() {
+            const height = parseInt(document.getElementById('height').value);
+            const age = parseInt(document.getElementById('age').value);
+            const photo = document.getElementById('photo').value;
+            let bill = 0;
+
+            if (height >= 120) {
+                if (age <= 12) {
+                    bill = 5;
+                } else if (age <= 18) {
+                    bill = 7;
+                } else if (age >= 45 && age <= 55) {
+                    document.getElementById('result').innerText = "❤️ Everything is going to be ok. Have a free ride on us! 🎉";
+                    if (photo === 'y') {
+                        document.getElementById('result').innerText += " 🖼️ Photo is also free for you!";
+                    }
+                    return;
+                } else {
+                    bill = 12;
+                }
+
+                if (photo === 'y') {
+                    bill += 3;
+                }
+
+                document.getElementById('result').innerText = `Your final bill is 💵 $${bill}`;
+            } else {
+                document.getElementById('result').innerText = "Sorry, you have to grow taller before you can ride. 🚫";
+            }
+        }
+
+        function resetSelections() {
+            document.getElementById('height').value = '';
+            document.getElementById('age').value = '';
+            document.getElementById('photo').value = '';
+            document.getElementById('result').innerText = '';
+        }
+    </script>
+</body>
+</html>
