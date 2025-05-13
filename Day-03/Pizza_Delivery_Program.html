@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Delivery Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        select, input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🍕 Pizza Delivery Program</h2>
+
+        <label>Choose your pizza size:</label>
+        <select id="size" onchange="updatePepperoniOptions()">
+            <option value="" disabled selected>Select Size</option>
+            <option value="S">Small ($15)</option>
+            <option value="M">Medium ($20)</option>
+            <option value="L">Large ($25)</option>
+        </select>
+
+        <label>Add Pepperoni? 🌶️ (+$2 or $3)</label>
+        <select id="pepperoni">
+            <option value="" disabled selected>Select Option</option>
+        </select>
+
+        <label>Add Extra Cheese? 🧀 (+$1)</label>
+        <select id="extraCheese">
+            <option value="" disabled selected>Select Option</option>
+            <option value="N">No ❌ (+$0)</option>
+            <option value="Y">Yes ✅ (+$1)</option>
+        </select>
+
+        <button onclick="calculateBill()">Calculate Final Bill 💵</button>
+        <button onclick="resetSelections()">Reset Selections 🔄</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function updatePepperoniOptions() {
+            const size = document.getElementById('size').value;
+            const pepperoniSelect = document.getElementById('pepperoni');
+            pepperoniSelect.innerHTML = '';
+
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            defaultOption.textContent = 'Select Option';
+            pepperoniSelect.appendChild(defaultOption);
+
+            const noOption = document.createElement('option');
+            noOption.value = 'N';
+            noOption.textContent = 'No ❌ (+$0)';
+            pepperoniSelect.appendChild(noOption);
+
+            const yesOption = document.createElement('option');
+            yesOption.value = 'Y';
+
+            if (size === 'S') {
+                yesOption.textContent = 'Yes ✅ (+$2)';
+            } else if (size === 'M' || size === 'L') {
+                yesOption.textContent = 'Yes ✅ (+$3)';
+            }
+
+            pepperoniSelect.appendChild(yesOption);
+        }
+
+        function calculateBill() {
+            const size = document.getElementById('size').value;
+            const pepperoni = document.getElementById('pepperoni').value;
+            const extraCheese = document.getElementById('extraCheese').value;
+            let bill = 0;
+
+            if (size === 'S') {
+                bill = 15;
+            } else if (size === 'M') {
+                bill = 20;
+            } else if (size === 'L') {
+                bill = 25;
+            }
+
+            if (pepperoni === 'Y') {
+                bill += (size === 'S') ? 2 : 3;
+            }
+
+            if (extraCheese === 'Y') {
+                bill += 1;
+            }
+
+            document.getElementById('result').innerText = `Your final bill is: 💵 $${bill}`;
+        }
+
+        function resetSelections() {
+            document.getElementById('size').value = '';
+            document.getElementById('pepperoni').innerHTML = '';
+            document.getElementById('extraCheese').value = '';
+            document.getElementById('result').innerText = '';
+            updatePepperoniOptions();
+        }
+    </script>
+</body>
+</html>
