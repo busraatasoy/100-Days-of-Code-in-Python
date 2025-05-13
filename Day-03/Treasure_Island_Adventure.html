@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Island Adventure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        select, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .emoji {
+            font-size: 24px;
+        }
+        .treasure-image {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🏝️ Treasure Island Adventure 🏝️</h2>
+
+        <label>🌍 You're at a crossroad. Where do you want to go?</label>
+        <select id="crossroad">
+            <option value="" disabled selected>Select Direction</option>
+            <option value="left">🛤️ Left</option>
+            <option value="right">➡️ Right</option>
+        </select>
+
+        <div id="lakeSection" class="hidden">
+            <label>🌊 You came to a lake. What do you do?</label>
+            <select id="lake">
+                <option value="" disabled selected>Select Action</option>
+                <option value="wait">⏳ Wait for a boat</option>
+                <option value="swim">🏊‍♂️ Swim across</option>
+            </select>
+        </div>
+
+        <div id="doorSection" class="hidden">
+            <label>🚪 You arrive at the island. Choose a door:</label>
+            <select id="door">
+                <option value="" disabled selected>Select Door</option>
+                <option value="red">🔴 Red</option>
+                <option value="yellow">🟡 Yellow</option>
+                <option value="blue">🔵 Blue</option>
+            </select>
+        </div>
+
+        <button id="findTreasureBtn" class="hidden" onclick="findTreasure()">🏆 Find Treasure 🏆</button>
+        <button id="resetBtn" onclick="resetAdventure()" class="hidden">🔄 Reset</button>
+
+        <h3 id="result"></h3>
+        <img id="treasureImage" class="treasure-image hidden" 
+             src="https://media.istockphoto.com/id/180315289/tr/foto%C4%9Fraf/3d-golden-treasure-chest.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=wBn_VL-d0M1BqfWgzDhbI7onWAtm77f5dS27d2dqkH8=" 
+             alt="Treasure Image" />
+    </div>
+
+    <script>
+        document.getElementById('crossroad').onchange = function() {
+            const crossroad = document.getElementById('crossroad').value;
+            if (crossroad === 'left') {
+                document.getElementById('lakeSection').classList.remove('hidden');
+            } else {
+                document.getElementById('result').innerText = "You fell into a hole. Game Over. 🕳️";
+                document.getElementById('lakeSection').classList.add('hidden');
+                document.getElementById('findTreasureBtn').classList.add('hidden');
+            }
+        };
+
+        document.getElementById('lake').onchange = function() {
+            const lakeChoice = document.getElementById('lake').value;
+            if (lakeChoice === 'wait') {
+                document.getElementById('doorSection').classList.remove('hidden');
+            } else {
+                document.getElementById('result').innerText = "You got attacked by an angry trout. Game Over. 🐡";
+                document.getElementById('doorSection').classList.add('hidden');
+                document.getElementById('treasureImage').classList.add('hidden');
+            }
+        };
+
+        document.getElementById('door').onchange = function() {
+            if (document.getElementById('crossroad').value &&
+                document.getElementById('lake').value &&
+                document.getElementById('door').value) {
+                document.getElementById('findTreasureBtn').classList.remove('hidden');
+            }
+        };
+
+        function findTreasure() {
+            const door = document.getElementById('door').value;
+
+            if (door === 'red') {
+                document.getElementById('result').innerText = "It's a room full of fire. Game Over. 🔥";
+                document.getElementById('treasureImage').classList.add('hidden');
+            } else if (door === 'yellow') {
+                document.getElementById('result').innerText = "You found the treasure. You Win! 🏅";
+                document.getElementById('treasureImage').classList.remove('hidden');
+            } else if (door === 'blue') {
+                document.getElementById('result').innerText = "You enter a room of beasts. Game Over. 🦁🐯🐻";
+                document.getElementById('treasureImage').classList.add('hidden');
+            }
+
+            document.getElementById('resetBtn').classList.remove('hidden');
+        }
+
+        function resetAdventure() {
+            document.getElementById('crossroad').value = '';
+            document.getElementById('lake').value = '';
+            document.getElementById('door').value = '';
+            document.getElementById('result').innerText = '';
+            document.getElementById('treasureImage').classList.add('hidden');
+            document.getElementById('lakeSection').classList.add('hidden');
+            document.getElementById('doorSection').classList.add('hidden');
+            document.getElementById('findTreasureBtn').classList.add('hidden');
+            document.getElementById('resetBtn').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
