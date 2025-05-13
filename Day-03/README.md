@@ -17,13 +17,13 @@
 ### ✌❗ Daily Task:
 Make logical decisions, take orders, and calculate BMI and ticket prices!
 
-1. 🔗 [Treasure Island🏝️](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/Treasure_Island_Adventure.html)  
+1. 🔗 [Treasure Island🏝️](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/html/Treasure_Island_Adventure.html)  
 
-2. 🔗 [Pizza Delivery Program🍕](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/Pizza_Delivery_Program.html)
+2. 🔗 [Pizza Delivery Program🍕](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/html/Pizza_Delivery_Program.html)
 
-3. 🔗 [Roller Coaster Ticket Sale 🎢](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/Roller_Coaster_Ticket_Sale.html)
+3. 🔗 [Roller Coaster Ticket Sale 🎢](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/html/Roller_Coaster_Ticket_Sale.html)
 
-4. 🔗 [BMI Calculator🏋️‍♀️](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/BMI_Calculator.html)
+4. 🔗 [BMI Calculator🏋️‍♀️](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-03/html/BMI_Calculator.html)
 
 
 
