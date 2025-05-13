@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .motivational {
+            font-size: 16px;
+            font-weight: normal;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>BMI Calculator 🏋️‍♀️</h2>
+        <label for="weight">Enter your weight (kg):</label>
+        <input type="number" id="weight" placeholder="Your weight in kg" required>
+
+        <label for="height">Enter your height (cm):</label>
+        <input type="number" id="height" placeholder="Your height in cm" required>
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <button onclick="resetFields()">Reset</button>
+
+        <div id="result" class="result"></div>
+        <div id="motivational" class="motivational"></div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100;  // Boyu metreye çeviriyoruz
+            const resultDiv = document.getElementById('result');
+            const motivationalDiv = document.getElementById('motivational');
+            let bmi = 0;
+
+            if (weight && height) {
+                bmi = weight / (height * height);  // BMI formülü
+
+                let interpretation = "";
+                let motivation = "";
+
+                if (bmi >= 25) {
+                    interpretation = `Your BMI is ${bmi.toFixed(2)}: Overweight 🍔🍟`;
+                    motivation = "It's time to make healthier choices! You’ve got this! 💪";
+                } else if (bmi >= 18.5) {
+                    interpretation = `Your BMI is ${bmi.toFixed(2)}: Normal weight 😊`;
+                    motivation = "Great job! Keep up the good work! 🎯";
+                } else {
+                    interpretation = `Your BMI is ${bmi.toFixed(2)}: Underweight 🍏🍎`;
+                    motivation = "Remember, good things take time. Stay healthy and strong! 🌱";
+                }
+
+                resultDiv.innerText = interpretation;
+                motivationalDiv.innerText = motivation;
+            } else {
+                resultDiv.innerText = "Please enter valid values for weight and height.";
+                motivationalDiv.innerText = "";
+            }
+        }
+
+        function resetFields() {
+            document.getElementById('weight').value = '';
+            document.getElementById('height').value = '';
+            document.getElementById('result').innerText = '';
+            document.getElementById('motivational').innerText = '';
+        }
+    </script>
+</body>
+</html>
