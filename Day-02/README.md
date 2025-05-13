@@ -23,7 +23,7 @@ This project calculates a tip based on user input.
 ### Day-02 - Tip Calculator Project 💰
 You can calculate a tip by entering your choose.
 
-[You Can Click to Try](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-02/index.html)
+[You Can Click to Try](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-02/Tip_Calculator.html)
 
 If you want to return to the home page:
 
