@@ -1,0 +1,43 @@
+if condition1 & condition2 & condition3:   # Check the conditions
+   do this
+else:
+   do this
+
+
+#**Scenario:**  
+
+'''- **The roller coaster company allows tickets to be sold to people who are 120 cm tall and above.**
+- **Additionally, tickets for people 12 and under are $5, between 12 and 18 are $7, and tickets for people over 18 are $12.**
+- **An additional $3 fee is charged for those who want to take photos.**
+- **The roller coaster company decided that for everybody who is having a midlife crisis, they would give them free tickets.**
+
+**📌Midlife Crises: A transition of identity and self-confidence that can occur in middle-aged individuals, typically 45-55 years old.**'''
+
+#Sample 5:  
+#Roller Coaster Project
+print("Welcome to the Roller Coaster!")
+height = int(input("What is your height in cm? "))  #Height information is obtained from the user.
+bill = 0                            #A bill variable was created for payment.
+
+if height >= 120:                                   # Check height for first condition.
+   print("You can ride the rollercoaster")         #If the first condition query is true, it will print this.
+   age = int(input("What is your age? "))           #Age information is obtained from the user.
+   if age  <= 12 :                                  # Check age for condition1.
+       bill = 5
+       print("Child tickets are $5.")       #If the condition1 query is true, it will print this.
+   elif age  <= 18 :
+       bill = 7                                 # Check age for condition2.
+       print("Youth tickets are $7.")       #If the condition2 query is true, it will print this.
+   elif age >= 45 and age <= 55 :          #Check age for midlife crisis      #Simple format: 45 >= age <=55
+       print("Everything is going to be ok. Have a free ride on us!")   
+   else:
+       bill = 12
+       print("Adult tickets are $12.")     #If the condition2 query is false, it will print this.
+   wants_photo = input("Do you want to have a photo take? Type y for Yes and n for No. ")
+   if wants_photo == "y":
+       bill +=3            #Add $3 to their bill. (bill = bill + 3)
+   
+   print(f"Your final bill is {bill}")     #Final bill calculated
+else:
+   print("Sorry you have to grow taller before you can ride.") #If the first condition query is false, it will print this.
+   
