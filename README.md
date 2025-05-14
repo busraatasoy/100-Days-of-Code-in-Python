@@ -13,7 +13,7 @@
   
 
 ## **Daily Project Tasks Websites**
-🔗👉[You can click on the link to try it.](https://busraatasoy.github.io/100-Days-of-Code-in-Python/)
+🔗👉[You can click and try daily projects](https://busraatasoy.github.io/100-Days-of-Code-in-Python/)
 
 
       
