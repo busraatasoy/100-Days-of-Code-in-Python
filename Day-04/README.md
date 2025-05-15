@@ -25,7 +25,7 @@ In **Day 04**, we explored the concepts of *Randomisation* and *Python Lists*. T
 ### ✌❗ Daily Task:
 Make random modulues and play rock, paper, scissors game!
 
-🔗 [Rock, Paper, Scissors Game](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-04/html/.html)  
+🔗 [Rock, Paper, Scissors Game](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-04/html/rock_paper_scissors_game.html)  
 
 
 
