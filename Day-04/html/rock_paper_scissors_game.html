@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .game-container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #eaeaea;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function playGame(userChoice) {
+            const choices = ['Rock⛰️', 'Paper📄', 'Scissors✂️'];
+            const computerChoice = Math.floor(Math.random() * 3);
+            const resultDisplay = document.getElementById('result');
+            const computerDisplay = document.getElementById('computer-choice');
+
+            computerDisplay.textContent = `Computer chose: ${choices[computerChoice]}`;
+
+            if (userChoice === computerChoice) {
+                resultDisplay.textContent = "It's a draw 🤝";
+            } else if (
+                (userChoice === 0 && computerChoice === 2) ||
+                (userChoice === 1 && computerChoice === 0) ||
+                (userChoice === 2 && computerChoice === 1)
+            ) {
+                resultDisplay.textContent = "You win! 🎉";
+            } else {
+                resultDisplay.textContent = "You lose! 😥";
+            }
+        }
+
+        function resetGame() {
+            document.getElementById('user-choice').textContent = '';
+            document.getElementById('computer-choice').textContent = '';
+            document.getElementById('result').textContent = '';
+        }
+    </script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock, Paper, Scissors Game 🏆</h1>
+        <p>Please select one of the options:</p>
+        <div>
+            <button onclick="playGame(0)">⛰️ Rock</button>
+            <button onclick="playGame(1)">📄 Paper</button>
+            <button onclick="playGame(2)">✂️ Scissors</button>
+        </div>
+        <p id="user-choice"></p>
+        <p id="computer-choice"></p>
+        <h2 id="result"></h2>
+        <button onclick="resetGame()" style="margin-top: 20px; background-color: #ff4d4d; color: white;">🔄 Reset Game</button>
+    </div>
+</body>
+</html>
