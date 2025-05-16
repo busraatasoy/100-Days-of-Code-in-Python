@@ -1,4 +1,4 @@
-# Day 04: Randomisation and Python Lists  
+# 📅 Day 04: Randomisation and Python Lists  
 
 In **Day 04**, we explored the concepts of *Randomisation* and *Python Lists*. This day covered how to use Python's built-in `random` module for generating random numbers and selecting random elements from a list. We also created multiple projects to apply these concepts in real scenarios.
 
@@ -26,7 +26,6 @@ In **Day 04**, we explored the concepts of *Randomisation* and *Python Lists*. T
 Make random modulues and play rock, paper, scissors game!
 
 🔗 [Rock, Paper, Scissors Game](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-04/html/rock_paper_scissors_game.html)  
-
 
 
 If you want to return to the home page:  
