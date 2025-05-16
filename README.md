@@ -25,8 +25,8 @@
 | ✅ | [**Day-02**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-02/README.md) | Understanding Data Types and How to Manipulate Strings | 
 | ✅ | [**Day-03**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-03/README.md) | Control Flow and Logical Operators | 
 | ✅ | [**Day-04**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-04/README.md) | Randomisation and Python Lists  | 
-| ✅ | **Day-05**: | Python Loops  | 
-| ✅ | **Day-06**:| Python Functions & Karel | 
+| ✅ | [**Day-05**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-05/README.md)| Python Loops  | 
+| ✅ | [**Day-06**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-06/README.md)| Python Functions & Karel | 
 | ✅ | **Day-07**:| Hangman | 
 | ⏳ | **Day-08**:| Function Parameters & Caesar Cipher | 
 | ❌ | **Day-09**:| Dictionaries, Nesting and the Secret Auction | 
