@@ -31,15 +31,15 @@ Practice Python Loops and build your own.
 
 **1- FizzBuzz Game**
 
-🔗[Click here](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-05/html/fizzbuzz_game.html)
+🔗[Click here](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-05/html/fizzbuzz_game.html)
 
 **2- Password Generator-Easy Version**
 
-🔗[Click here](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-05/html/password_generator_easy_version.html)
+🔗[Click here](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-05/html/password_generator_easy_version.html)
 
 **3- Password Generator-Hard Version**
 
-🔗[Click here](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-05/html/password_generator_hard_version.html)
+🔗[Click here](https://busraatasoy.github.io/100-Days-of-Code-in-Python/Day-05/html/password_generator_hard_version.html)
 
 
 If you want to return to the home page:
