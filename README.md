@@ -28,7 +28,7 @@
 | ✅ | [**Day-05**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-05/README.md) | Python Loops  | 
 | ✅ | [**Day-06**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-06/README.md) | Python Functions & Karel | 
 | ✅ | [**Day-07**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-07/README.md) | Hangman | 
-| ⏳ | **Day-08**:| Function Parameters & Caesar Cipher | 
+| ⏳ | [**Day-08**:](https://github.com/busraatasoy/100-Days-of-Code-in-Python/blob/main/Day-08/README.md) | Function Parameters & Caesar Cipher | 
 | ❌ | **Day-09**:| Dictionaries, Nesting and the Secret Auction | 
 | ❌ | **Day-10**:| Function with Outputs  | 
 | ❌ | **Day-11**:| The Blackjack Capstone Project  | 
